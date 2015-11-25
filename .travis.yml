@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+- 2.1
+
+env:
+  global:
+  - DEPLOY_HOST=curlybracket.co.uk
+  - DEPLOY_REMOTEDIR=www.curlybracket.co.uk/
+  - secure: "C0gj4iKAvwMnwXlgUE3eNrYwPySJUHNeZMZ6hOOZ2AJ9zyknp/4wAxFHKtsyoyBOq5HavWrqMBq8zUvhhD/MhNF4J9GfIcOLvj3S3B0pNv4ANQKXV5zjSZcUW8ZEhXnNlszkWleHl11mjVF1q80dpkZ4olXaB0IV8qQrDZvVF90fm/cMurXcoLQUKdRKqYO4zZlT3CPZr9SAuwMKCROSMRgWz9XrPFQf0lTzFff9HjbpufGBjd0hvtSqkf3+UYL8vRHmCYzHVBvs74Wl7cWFdsilb4IVqbWZuDuMn73lH33+6r2odcg5EvnZNBCW4gyKqOdiWW8M1nH/1Cofos/mFT0x6EDSpEU+3SOTW2LmE5y+Dht9B2tOAzatSH/WphhMW2on/TsgowwzQqJPu039OlZGrDnuie5dFNQNOhNxPNEC6T9N8LFh6mwUwcdO4jvmKIQSqqtDEuKg85ck11dNDzuP4MUcZGs8DKYzU+I3THouQIjI4lDqnDWH70IOhRuGXP5zCtX3F9TgX5DrHii6IGGncdkBPwKrAhK8Xp/8o5Z0sOjtw9++EXlOJVBcv//x3K08qfFetgamS2pDSBFmBqVDb/BtfmR33EKVhBQd+8syyT/rQymVpMI5HG/L+Xlh+rDkEWEnssmjcvtX/0rlXlNH+3znDelVe5Nlb7kofhI="
+  - secure: "VFsbEY/EhpZr8cFfYKnXtQR2R+Jd+d8sCNfWAfceEru5m/jKQ7o+cFewUuZPEPGEallu8SIi8EzrOVe6IrYtuKOzS8rbFnhWZsA80bPQ+j1wdvVgHX+P0GJ/iOKWM7Y5tyrWsVbtncgeZ8chsEeFkOGMuA9Bo7mAypTO+zm+cf6kv33dWQuvqeJeSTWmA0ZZ4e8G4nhNHBEWdTqH2HWMTgL83oxqbd/9zgh28HUSShsSCoYeKwYoOGxRA9c2bYB4vUCOuTw+YDb9zdhFhH9PWy+RixK4wOVYRFR2zqNPG1q1EOoG4tny/OOIJitGY/QRWBd8GQdPXizDUXtRDlhyGQslVND1cmN6tlhIvr6Jyib0wD6BuYn4Z8V4qpkdFmCVXfRawFB4vTtJ+rCkONG//hhATY1k+vN8rb0kwHWSLTj5A9gz8r2hvHNUsbGx6tLpIRCuquWyAoSQwXWM6SnriLtnVQnX3Is2thLqRIYFoKzXy4iQZp0TPvjc8uwzmbBui5jcF92umCeLyqH1vL4FpAwkEdNHWaT3bEvrmm/ACKh2klx8SFVU/EUkYa361QRZjsOpIeOICbPP37yPL+HsjRuDe6GDpKHc0c+BoVSGye+Mq1RgzorFWoYHUwuz1Ae+xJcRkn9675FclPQKEOvRvSsxB4nV5i6qkNWBSshYsrI="
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+addons:
+  apt:
+    packages:
+      - sshpass
+
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+script: ./script/cibuild.sh
+after_success: bundle exec travis-custom-deploy sftp _site/

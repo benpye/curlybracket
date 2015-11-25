@@ -1,0 +1,18 @@
+---
+layout: default
+title: Archive
+---
+
+<h2>Archive</h2>
+
+{% for post in site.posts %}
+
+<div>
+  <h3>
+  {{ post.date | date: "%-d %B %Y" }}
+    »
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h3>
+</div>
+
+{% endfor %}

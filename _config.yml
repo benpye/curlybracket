@@ -1,0 +1,19 @@
+title:   '{curlybracket}'
+author:
+  name:  'Ben Pye'
+
+front_limit: 5
+disqus_shortname: 'curlybracket'
+
+path:    ''
+url:     'https://curlybracket.co.uk'
+baseurl: ''
+
+markdown:   redcarpet
+
+sass:
+  style:    expanded
+
+permalink:  /:title/
+
+exclude:    [vendor]

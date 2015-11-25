@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h2 itemprop="headline">{{ page.title }}</h2>
+        <h3>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%-d %B %Y" }}
+            </time>
+        </h3>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="{{ site.author.name }}"/>
+    </span>
+    {% if page.image %}
+    <meta itemprop="image" content="{{ site.url }}{{ site.baseurl }}/images/{{ page.image }}"/>
+    {% endif %}
+    <div class="post-comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = '{{ site.disqus_shortname }}';
+            var disqus_identifier = '{{ page.slug }}';
+            var disqus_title = '{{ page.title }}';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+</article>
