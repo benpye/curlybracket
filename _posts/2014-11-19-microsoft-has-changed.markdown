@@ -5,6 +5,7 @@ date:   2014-11-19 21:21:00 +0000
 categories: commentary
 ---
 When I switched to Arch Linux as my primary operating system about a year ago I did this not because Windows itself was bad, but because it made my work flow better, embedded development was easier, most software I used was open source, it was good. A year later I'm now back on Windows and about to buy a Surface Pro 3, Microsoft has changed and it's good.
+
 <!--more-->
 
 This really started with the Windows Technical Preview, Microsoft released a version of Windows earlier than they ever had done before (M1 apparently - the Windows 8 developer preview was M3 for comparison). This was a great move for them, it allowed for better feedback, earlier in the development process. If they use this well I believe that Windows 10 will be the best version of Windows to date. They've already been making changes based upon the feedback received and if this continues, it'll be fantastic.
