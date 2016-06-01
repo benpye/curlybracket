@@ -17,4 +17,4 @@ sass:
 
 permalink:  /:title/
 
-exclude:    [vendor]
+exclude:    ['README.md', 'config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
