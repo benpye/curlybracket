@@ -17,7 +17,7 @@ sass:
 
 permalink:  /:title/
 
-exclude:    ['README.md', 'config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
+exclude:    ['README.md', 'config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'nginx.conf.sigil']
 
 gems:
   - jekyll-auto-image
