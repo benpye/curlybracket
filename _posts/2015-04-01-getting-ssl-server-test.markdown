@@ -3,9 +3,8 @@ layout: post
 title:  "Getting an A+ on the SSL server test"
 date:   2015-04-01 16:47:00 +0000
 categories: admin
-image:  ssl-test-a+.png
 ---
-[![A+ Score]({{ site.baseurl }}/images/ssl-test-a+.png)](https://www.ssllabs.com/ssltest/analyze.html?d=curlybracket.co.uk)
+[![A+ Score]({{ site.baseurl }}/images/hero/ssl-test-a+.png)](https://www.ssllabs.com/ssltest/analyze.html?d=curlybracket.co.uk)
 
 Setting up this website has always been more of a learning exercise for myself than trying to provide a useful resource to anybody. I'd be very happy if anyone finds any value in what I write, but in general I do it more to know how to configure a web server correctly. Recently I've tried to increase the scope of my knowledge, and now I have both automated Amazon S3 backups (which I will write about at a later date), and this server also scores A+ on the [Qualys SSL test](https://www.ssllabs.com/ssltest/), the highest rank achievable.
 

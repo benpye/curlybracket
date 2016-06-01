@@ -3,12 +3,11 @@ layout: post
 title:  "Lumia 950XL Review - Great hardware that needs better support"
 date:   2016-06-01 16:34:00 +0100
 categories: review
-image: 950xlreview/lumia-950xl-front.jpg
 ---
 
 Microsoft has recently lent me a 950XL for review. I appreciate being able to use this loan unit but that has not influenced my opinion of the device or of Microsoft – this is my personal view and no 3rd party has influence directly or indirectly on my opinions.
 
-![Lumia 950XL Photo]({{ site.baseurl }}/images/950xlreview/lumia-950xl-front.jpg)
+![Lumia 950XL Photo]({{ site.baseurl }}/images/hero/950xlreview-lumia-950xl-front.jpg)
 
 ##The Phone
 The 950XL is definitely a great piece of hardware, the screen is beautiful, it's fast and the camera is fantastic. It certainly matches up to my Nexus 6P in all of those regards, but it is not without it's faults. Aesthetically I prefer the Nexus 6P, the 950XL doesn't look bad, but it isn't a stunning device either, the matte black plastic body does really do anything to make it look like a premium device. When there are Android flagships, and iPhones with all metal bodies it seems kinda unfortunate that the best Windows 10 Mobile device today uses black plastic. Having a removable battery and a microSD slot on a high end device is certainly something to be welcomed though, the 950, 950XL and LG G5 are the only high end phones I can think of with both. For some people the 5.7" display might be cumbersome, but coming from the Nexus 6P with the same size display, I had no issues. The 950XL is actually a little shorter. Whilst I haven't tested the battery life extensively, I had no real issues with it. I didn't have any particularly long days during my time testing it. Whilst it could still be a problem for some, but it's certainly good enough for my use.
@@ -29,8 +28,8 @@ In all, I like the 950XL as a device. The hardware is good, the camera is fantas
 
 ##Test shots
 ###Nexus 6P
-![Nexus 6P Photo]({{ site.baseurl }}/images/950xlreview/6p-crane.jpg)
-![Nexus 6P Photo]({{ site.baseurl }}/images/950xlreview/6p-rainbow.jpg)
+[![Nexus 6P Photo]({{ site.baseurl }}/images/thumbnail/950xlreview-6p-crane.jpg)]({{ site.baseurl }}/images/original/950xlreview-6p-crane.jpg)
+[![Nexus 6P Photo]({{ site.baseurl }}/images/thumbnail/950xlreview-6p-rainbow.jpg)]({{ site.baseurl }}/images/original/950xlreview-6p-rainbow.jpg)
 ###Lumia 950XL
-![Lumia 950XL Photo]({{ site.baseurl }}/images/950xlreview/950xl-crane.jpg)
-![Lumia 950XL Photo]({{ site.baseurl }}/images/950xlreview/950xl-rainbow.jpg)
+[![Lumia 950XL Photo]({{ site.baseurl }}/images/thumbnail/950xlreview-950xl-crane.jpg)]({{ site.baseurl }}/images/original/950xlreview-950xl-crane.jpg)
+[![Lumia 950XL Photo]({{ site.baseurl }}/images/thumbnail/950xlreview-950xl-rainbow.jpg)]({{ site.baseurl }}/images/original/950xlreview-950xl-rainbow.jpg)

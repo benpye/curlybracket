@@ -17,7 +17,8 @@ layout: default
         <meta itemprop="name" content="{{ site.author.name }}"/>
     </span>
     {% if page.image %}
-    <meta itemprop="image" content="{{ site.url }}{{ site.baseurl }}/images/{{ page.image }}"/>
+    <meta name="twitter:image:src" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">
+    <meta itemprop="image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
     <div class="post-comments">
         <div id="disqus_thread"></div>

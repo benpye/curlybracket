@@ -18,3 +18,17 @@ sass:
 permalink:  /:title/
 
 exclude:    ['README.md', 'config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
+
+gems:
+  - jekyll-auto-image
+  - jekyll-minimagick
+
+mini_magick:
+  thumbnail:
+    source: images/original
+    destination: images/thumbnail
+    resize: "200x200"
+  hero:
+    source: images/original
+    destination: images/hero
+    resize: "768x768"
