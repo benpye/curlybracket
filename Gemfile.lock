@@ -12,8 +12,6 @@ GEM
       mercenary (~> 0.3.3)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-auto-image (1.1.2)
-      jekyll
     jekyll-minimagick (0.0.3)
       jekyll (>= 0.10.0)
       mini_magick (>= 3.3)
@@ -46,7 +44,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  jekyll-auto-image
   jekyll-minimagick
   rack-jekyll
   redcarpet

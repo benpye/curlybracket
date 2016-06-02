@@ -3,6 +3,7 @@ layout: post
 title:  "Getting an A+ on the SSL server test"
 date:   2015-04-01 16:47:00 +0000
 categories: admin
+image: /images/hero/ssl-test-a+.png
 ---
 [![A+ Score]({{ site.baseurl }}/images/hero/ssl-test-a+.png)](https://www.ssllabs.com/ssltest/analyze.html?d=curlybracket.co.uk)
 

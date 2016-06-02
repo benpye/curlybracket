@@ -3,6 +3,7 @@ layout: post
 title:  "Lumia 950XL Review - Great hardware that needs better support"
 date:   2016-06-01 16:34:00 +0100
 categories: review
+image: /images/hero/950xlreview-lumia-950xl-front.jpg
 ---
 
 Microsoft has recently lent me a 950XL for review. I appreciate being able to use this loan unit but that has not influenced my opinion of the device or of Microsoft – this is my personal view and no 3rd party has influence directly or indirectly on my opinions.
