@@ -1,0 +1,40 @@
+baseurl             = "https://curlybracket.co.uk/"
+theme               = "cocoa"
+builddrafts         = false
+canonifyurls        = true
+contentdir          = "content"
+languageCode        = "en-GB"
+layoutdir           = "layouts"
+publishdir          = "public"
+author              = "Ben Pye"
+title               = "curlybracket"
+pygmentsuseclasses  = true
+disqusshortname     = "curlybracket" # Comment out to disable Disqus.
+pluralizelisttitles = false
+googleAnalytics     = "UA-67260324-1"
+
+[permalinks]
+fixed = ":title/"
+blog  = "blog/:slug/"
+
+[params]
+author       = "Ben Pye"
+cachebuster  = true # add the current unix timestamp in query string for cache busting css assets
+dateform     = "2 Jan 2006"
+dateformfull = "Mon 2 Jan 2006 15:04:05 GMT"
+description  = ""
+email        = "ben@curlybracket.co.uk"
+faviconfile  = ""
+github       = "//github.com/benpye"
+highlightjs  = true
+lang         = "en"
+linkedin     = "//uk.linkedin.com/in/benpye"
+twitter      = "//twitter.com/bencpye"
+selfIntro    = "" # appears in the site header when set to a non-empty string
+forcehttps   = false # use a script to detect whether visitors should be redirected to https
+
+# gravatar             = ""                # do not use in the same time as avatar
+# avatar               = "img/profile.png" # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
+# highlightjslanguages = ["go"]            # additional languages not included in the "common" set
+
+# extracssfiles = [ "/css/override.css" ] # In your `static` directory, add/remove files as necessary.
