@@ -1,0 +1,26 @@
+[build]
+publish = "public"
+command = "hugo -b $URL"
+
+[build.environment]
+HUGO_VERSION = "0.39"
+
+[context.production.environment]
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "hugo -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_GOOGLEANALYTICS = "off"
+
+[context.branch-deploy]
+command = "hugo -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_GOOGLEANALYTICS = "off"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"

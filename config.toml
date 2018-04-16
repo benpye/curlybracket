@@ -1,4 +1,4 @@
-baseurl             = "https://curlybracket.co.uk/"
+baseurl             = ""
 builddrafts         = false
 canonifyurls        = true
 contentdir          = "content"
