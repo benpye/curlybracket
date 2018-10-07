@@ -2,6 +2,7 @@
 date = "2016-12-27T21:32:35Z"
 title = "Lumia 950XL Review"
 draft = false
+expiryDate = "2018-01-01T00:00:00Z"
 +++
 
 Microsoft has recently lent me a 950XL for review. I appreciate being able to use this loan unit but that has not influenced my opinion of the device or of Microsoft – this is my personal view and no 3rd party has influence directly or indirectly on my opinions.
