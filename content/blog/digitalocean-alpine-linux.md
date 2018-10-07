@@ -32,9 +32,17 @@ We can easily address 1, whilst it would be nice to have a static IP setup it su
 #!/bin/sh
 
 rc-update add sshd default
-rc-update add networking default
 
-echo -e "auto lo\niface lo inet loopback\nauto eth0\niface eth0 inet dhcp" > /etc/network/interfaces
+cat > /etc/network/interfaces <<-EOF
+iface lo inet loopback
+iface eth0 inet dhcp
+EOF
+
+ln -s networking /etc/init.d/net.lo
+ln -s networking /etc/init.d/net.eth0
+
+rc-update add net.eth0 default
+rc-update add net.lo boot
 ```
 
 To address 2 and 3 we need to look at how `cloud-init` would have gotten this configuration, on a Digital Ocean droplet this is provided by their internal metadata service [^5]. To query this service we simply need to send a `HTTP` request at the link local address `169.254.169.254`. Looking through the API we see two endpoints that look to provide the information we require, `http://169.254.169.254/metadata/v1/hostname` and `http://169.254.169.254/metadata/v1/public-keys`, providing the hostname and `authorized_keys` respectively. These endpoints helpfully do not mangle the data in any way and it is sufficient for us to simply `wget` the data from these endpoints to the appropriate config files on first boot. We now need to extend the earlier script to generate a service that we can then enable for the first boot. OpenRC is quite simple and provides a script guide with everything we need to get a basic target working [^6]. All our service does is run a shell script, the shell script grabs the necessary data from the metadata endpoints and correctly configure the permissions before disabling the service preventing it from being executed on subsequent boots. Updating our previous script we get something like the following:
@@ -43,15 +51,39 @@ To address 2 and 3 we need to look at how `cloud-init` would have gotten this co
 #!/bin/sh
 
 rc-update add sshd default
-rc-update add networking default
 
-echo -e "auto lo\niface lo inet loopback\nauto eth0\niface eth0 inet dhcp" > /etc/network/interfaces
+cat > /etc/network/interfaces <<-EOF
+iface lo inet loopback
+iface eth0 inet dhcp
+EOF
+
+ln -s networking /etc/init.d/net.lo
+ln -s networking /etc/init.d/net.eth0
+
+rc-update add net.eth0 default
+rc-update add net.lo boot
 
 mkdir -p /root/.ssh
 chmod 700 /root/.ssh
 
-echo -e "#!/bin/sh\nwget -T 5 http://169.254.169.254/metadata/v1/hostname -q -O /etc/hostname\nhostname -F /etc/hostname\nwget -T 5 http://169.254.169.254/metadata/v1/public-keys -O /root/.ssh/authorized_keys\nchmod 600 /root/.ssh/authorized_keys\nrc-update del do-init default\nexit 0" > /bin/do-init
-echo -e "#!/sbin/openrc-run\ndepend() {\n       need networking\n}\ncommand=\"/bin/do-init\"\ncommand_args=\"\"\npidfile=\"/tmp/do-init.pid\"\n" > /etc/init.d/do-init
+cat > /bin/do-init <<-EOF
+#!/bin/sh
+wget -T 5 http://169.254.169.254/metadata/v1/hostname -q -O /etc/hostname\nhostname -F /etc/hostname
+wget -T 5 http://169.254.169.254/metadata/v1/public-keys -O /root/.ssh/authorized_keys
+chmod 600 /root/.ssh/authorized_keys
+rc-update del do-init default
+exit 0
+EOF
+
+cat > /etc/init.d/do-init <<-EOF
+#!/sbin/openrc-run
+depend() {
+    need networking
+}
+command="/bin/do-init"
+command_args=""
+pidfile="/tmp/do-init.pid"
+EOF
 
 chmod +x /etc/init.d/do-init
 chmod +x /bin/do-init
